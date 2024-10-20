@@ -1,113 +1,141 @@
 import Image from "next/image";
+import Link from "next/link";
+import { BsCheck2Circle } from "react-icons/bs";
+
+const services = [
+  {
+    icon: "📱",
+    title: "Airtime & Data Bundles",
+    description: "Top up your airtime or purchase data bundles for all major networks in seconds. No more queues or waiting—just quick, seamless transactions!"
+  },
+  {
+    icon: "⚡",
+    title: "Pay Electricity Bills",
+    description: "Keep the lights on! Easily pay your electricity bills from anywhere, at any time. BYTELECOMS simplifies your payments so you can focus on what matters."
+  },
+  {
+    icon: "📚",
+    title: "Buy Educational Pins",
+    description: "Preparing for an exam? Purchase educational pins for WAEC, NECO, JAMB, and other exams with ease. Stay ahead in your education journey."
+  },
+  {
+    icon: "🌐",
+    title: "Available Anytime, Anywhere",
+    description: "Access our platform from any device. BYTELECOMS is designed for convenience, so you can manage your transactions whether you're at home or on the go."
+  }
+];
+
+const features = [
+  {
+    title: "Secure & Reliable Payments",
+    description: "We prioritize your security, ensuring all transactions are safe and encrypted."
+  },
+  {
+    title: "Fast & Easy Purchases",
+    description: "Spend less time waiting and more time enjoying our services."
+  },
+  {
+    title: "24/7 Customer Support",
+    description: "Got questions? Our friendly support team is available round the clock to assist you."
+  },
+  {
+    title: "Multiple Payment Options",
+    description: "Choose the payment method that suits you best—bank transfer, card payment, and more."
+  }
+];
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <main>
+      <div className="header py-10 px-[5%]">
+        <p className="text-[26px] font-bold">BYTELECOMS</p>
+      </div>
+
+      <div className="hero flex flex-col gap-5 items-center justify-center w-2/3 text-center m-auto h-[70vh]">
+        <p className="bg-primary100 border-primary text-primary py-2 px-5 font-bold text-xs rounded-full">
+          Welcome to BYTELECOMS
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+        <h1 className="text-[48px] font-bold">
+          Your One-Stop <span className="text-primary">Solution</span> for Airtime, Data, Utility Bills & More!
+        </h1>
+        <p className="w-1/2 text-sm">
+          BYTELECOMS makes it easier than ever to buy data, recharge airtime, pay your electricity bills, and purchase educational pins—all from one platform. Stay connected and powered up with just a few clicks!
+        </p>
+        <Link href={"https://megapay-olive.vercel.app/login"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
+          Get Started
+        </Link>
+      </div>
+
+      <div className="why bg-[rgb(40,40,40)] text-white py-20 px-[5%] flex flex-col gap-10">
+        <h2 className="text-[28px] text-center">Why choose us?</h2>
+        <div className="grid grid-cols-4 gap-10">
+          {
+            services.map((item, i) => {
+              return (
+                <div className="flex flex-col">
+                  <p className="text-[20px]">{item.icon} {item.title}</p>
+                  <p className="text-sm text-gray-300">{item.description}</p>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="my-20 grid grid-cols-2 px-[5%] items-center">
+        <div>
+          <h2 className="text-[24px] font-[600]">Features  you will love</h2>
+
+          <div className="my-3 flex flex-col gap-5">
+            {
+              features.map((item, i) => {
+                return (
+                  <div className=" gap-2 items-center">
+                    {/* <BsCheck2Circle size={20}/> */}
+                    <p>- <span className="font-[600]">{item.title}: </span>{item.description}</p>
+                  </div>
+                )
+              })
+            }
+          </div>
+
+        </div>
+
+        <div className="flex items-center justify-center">
+          <Image alt="features" src={"/./features.jpg"} width={500} height={500} className="rounded-2xl shadow-2xl" />
+        </div>
+
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="join-us flex flex-col gap-5 my-36 items-center justify-center">
+        <h2 className="text-[24px] font-[500]">Join Thousands of Happy Customers</h2>
+        <p className="w-1/2 text-center">BYTELECOMS is trusted by thousands of users across the country. Join our community and experience seamless transactions every day!</p>
+        <Link href={"https://megapay-olive.vercel.app/login"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
+          Get Started
+        </Link>
       </div>
+
+      <footer className="text-white bg-[rgb(40,40,40)] py-20 px-[5%] mt-20 grid grid-cols-2 gap-20">
+        <div className="flex flex-col gap-5">
+          <h2 className="text-[26px] font-bold">BYTELECOMS</h2>
+          <p>
+            BYTELECOMS makes it easier than ever to buy data, recharge airtime, pay your electricity bills, and purchase educational pins—all from one platform. Stay connected and powered up with just a few clicks!
+          </p>
+          <Link href={"https://megapay-olive.vercel.app/login"} className="py-3 w-fit px-5 bg-white rounded-full text-[rgb(40,40,40)]">
+            Get Started
+          </Link>
+        </div>
+
+        <div className="flex  justify-end">
+          <p>Follow us</p>
+
+          <div>
+
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
