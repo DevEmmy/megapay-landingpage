@@ -48,7 +48,7 @@ const features = [
 export default function Home() {
   return (
     <main>
-      <div className="header py-10 px-[5%] flex justify-between">
+      <div className="header py-10 px-[5%] flex items-center justify-between">
         <p className="text-[26px] md:text-[20px] md:font-[500] font-bold">BYTELECOMS</p>
 
         <Link href={"https://app.bytetelecoms.com/"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
@@ -56,7 +56,9 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="hero flex flex-col gap-5 items-center justify-center w-2/3 md:w-full text-center m-auto h-[70vh]">
+      <div className="hero flex flex-col gap-5 items-center justify-center w-2/3 md:w-full px-[5%] text-center m-auto min-h-[70vh] pb-20">
+      <Image alt="logo" src={"/./logo.png"} width={200} height={200} className="object-cover h-[70px]" />
+
         <p className="bg-primary100 border-primary text-primary py-2 px-5 font-bold text-xs rounded-full">
           Welcome to BYTELECOMS
         </p>
