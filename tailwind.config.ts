@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens:{
+        "md": { "max": "768px" },
+      },
       colors:{
         primary: "rgba(30, 144, 255, 1)",
         primary100: "#AED7FF",

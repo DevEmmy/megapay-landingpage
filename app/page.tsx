@@ -48,29 +48,33 @@ const features = [
 export default function Home() {
   return (
     <main>
-      <div className="header py-10 px-[5%]">
-        <p className="text-[26px] font-bold">BYTELECOMS</p>
+      <div className="header py-10 px-[5%] flex justify-between">
+        <p className="text-[26px] md:text-[20px] md:font-[500] font-bold">BYTELECOMS</p>
+
+        <Link href={"https://app.bytetelecoms.com/"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
+          Get Started
+        </Link>
       </div>
 
-      <div className="hero flex flex-col gap-5 items-center justify-center w-2/3 text-center m-auto h-[70vh]">
+      <div className="hero flex flex-col gap-5 items-center justify-center w-2/3 md:w-full text-center m-auto h-[70vh]">
         <p className="bg-primary100 border-primary text-primary py-2 px-5 font-bold text-xs rounded-full">
           Welcome to BYTELECOMS
         </p>
 
-        <h1 className="text-[48px] font-bold">
+        <h1 className="text-[48px] md:text-[32px] font-bold">
           Your One-Stop <span className="text-primary">Solution</span> for Airtime, Data, Utility Bills & More!
         </h1>
-        <p className="w-1/2 text-sm">
+        <p className="w-1/2 md:w-full text-sm">
           BYTELECOMS makes it easier than ever to buy data, recharge airtime, pay your electricity bills, and purchase educational pins—all from one platform. Stay connected and powered up with just a few clicks!
         </p>
-        <Link href={"https://megapay-olive.vercel.app/login"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
+        <Link href={"https://app.bytetelecoms.com/"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
           Get Started
         </Link>
       </div>
 
       <div className="why bg-[rgb(40,40,40)] text-white py-20 px-[5%] flex flex-col gap-10">
         <h2 className="text-[28px] text-center">Why choose us?</h2>
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid grid-cols-4 md:grid-cols-1 gap-10">
           {
             services.map((item, i) => {
               return (
@@ -84,7 +88,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="my-20 grid grid-cols-2 px-[5%] items-center">
+      <div className="my-20 grid grid-cols-2 md:grid-cols-none px-[5%] items-center">
         <div>
           <h2 className="text-[24px] font-[600]">Features  you will love</h2>
 
@@ -110,31 +114,33 @@ export default function Home() {
       </div>
 
       <div className="join-us flex flex-col gap-5 my-36 items-center justify-center">
-        <h2 className="text-[24px] font-[500]">Join Thousands of Happy Customers</h2>
-        <p className="w-1/2 text-center">BYTELECOMS is trusted by thousands of users across the country. Join our community and experience seamless transactions every day!</p>
-        <Link href={"https://megapay-olive.vercel.app/login"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
+        <h2 className="text-[24px] md:text-[22px] md:text-center font-[500]">Join Thousands of Happy Customers</h2>
+        <p className="w-1/2 md:w-full text-center">BYTELECOMS is trusted by thousands of users across the country. Join our community and experience seamless transactions every day!</p>
+        <Link href={"https://app.bytetelecoms.com/"} className="py-3 px-5 bg-[rgb(40,40,40)] rounded-full text-white">
           Get Started
         </Link>
       </div>
 
-      <footer className="text-white bg-[rgb(40,40,40)] py-20 px-[5%] mt-20 grid grid-cols-2 gap-20">
+      <footer className="text-white bg-[rgb(40,40,40)] py-20 px-[5%] mt-20 grid grid-cols-2 md:flex md:flex-col md:grid-cols-none gap-20">
         <div className="flex flex-col gap-5">
           <h2 className="text-[26px] font-bold">BYTELECOMS</h2>
           <p>
             BYTELECOMS makes it easier than ever to buy data, recharge airtime, pay your electricity bills, and purchase educational pins—all from one platform. Stay connected and powered up with just a few clicks!
           </p>
-          <Link href={"https://megapay-olive.vercel.app/login"} className="py-3 w-fit px-5 bg-white rounded-full text-[rgb(40,40,40)]">
+          <Link href={"https://app.bytetelecoms.com/"} className="py-3 w-fit px-5 bg-white rounded-full text-[rgb(40,40,40)]">
             Get Started
           </Link>
         </div>
 
-        <div className="flex  justify-end">
+        <div className="flex  justify-end md:justify-normal">
           <p>Follow us</p>
 
           <div>
 
           </div>
         </div>
+
+        <p className="text-center md:col-span-2">Bytetelecom &copy; 2024. All right reserved.</p>
       </footer>
     </main>
   );
