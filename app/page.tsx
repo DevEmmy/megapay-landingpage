@@ -70,7 +70,7 @@ export default function Home() {
       <div className="hero flex flex-col gap-5 items-center justify-center w-2/3 md:w-full px-[5%] text-center m-auto min-h-[70vh] pb-20">
         <Image
           alt="logo"
-          src={"/./logo.png"}
+          src={"/logo.png"}
           width={200}
           height={200}
           className="object-cover h-[70px]"
@@ -144,7 +144,7 @@ export default function Home() {
         <div className="flex items-center justify-center">
           <Image
             alt="features"
-            src={"/./features.jpg"}
+            src={"/features.jpg"}
             width={500}
             height={500}
             className="rounded-2xl shadow-2xl"
